@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SAMU" Class="registerclassDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-R87NU04\DESK1;Initial Catalog=SAMU;Integrated Security=True" SettingsObjectName="PFE.Properties.Settings" SettingsPropertyName="SAMUConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Appel_Utilisateur_table" Member="Appel_Utilisateur_table">
+    <Type Name="Appel_Utilisateur_table">
+      <Column Name="identifiant" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="clefiche" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Appeltable_Appel_Utilisateur_table" Member="Appeltable" ThisKey="clefiche" OtherKey="CleAppel" Type="Appeltable" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AppelPatientTable" Member="AppelPatientTable">
+    <Type Name="AppelPatientTable">
+      <Column Name="cleappel" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="clepatient" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Association Name="patientT_AppelPatientTable" Member="patientT" ThisKey="clepatient" OtherKey="IDpatient" Type="patientT" IsForeignKey="true" />
+      <Association Name="Appeltable_AppelPatientTable" Member="Appeltable" ThisKey="cleappel" OtherKey="CleAppel" Type="Appeltable" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Horraire_de_la_mission" Member="Horraire_de_la_mission">
+    <Type Name="Horraire_de_la_mission">
+      <Column Name="code" Type="System.String" DbType="VarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Heuredepart" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Heurearriveaulieu" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Heurebilan" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Heuredepartdestination" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Heurearrivedestination" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Heuredepartsec0" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Heuredisp" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Heureretourbase" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="cleappel" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Appeltable_Horraire_de_la_mission" Member="Appeltable" ThisKey="cleappel" OtherKey="CleAppel" Type="Appeltable" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Lieu_de_patient_table" Member="Lieu_de_patient_table">
+    <Type Name="Lieu_de_patient_table">
+      <Column Name="Lieudepatient" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Autrelieu" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Hopital" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="service" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="IDpatient" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="code" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="patientT_Lieu_de_patient_table" Member="patientT" ThisKey="IDpatient" OtherKey="IDpatient" Type="patientT" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.patientT" Member="patientT">
+    <Type Name="patientT">
+      <Column Name="IDpatient" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Nompatient" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Prenompatient" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Agepatient" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Genrepatient" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Gouvernoratpatient" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Gcs" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TA" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Pouls" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="FR" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="SPO2" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="T" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Dextro" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Association Name="patientT_AppelPatientTable" Member="AppelPatientTable" ThisKey="IDpatient" OtherKey="clepatient" Type="AppelPatientTable" />
+      <Association Name="patientT_Lieu_de_patient_table" Member="Lieu_de_patient_table" ThisKey="IDpatient" OtherKey="IDpatient" Type="Lieu_de_patient_table" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Appelant_table" Member="Appelant_table">
+    <Type Name="Appelant_table">
+      <Column Name="ID_appelant" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Nom_appelant" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Telephone_appelant" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="CIN_appelant" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cleappel" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="appelant" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Association Name="Appelant_table_Appeltable" Member="Appeltable1" ThisKey="ID_appelant" OtherKey="Idappelant" Type="Appeltable" />
+      <Association Name="Appeltable_Appelant_table" Member="Appeltable" ThisKey="cleappel" OtherKey="CleAppel" Type="Appeltable" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.viewch1" Member="viewch1">
+    <Type Name="viewch1">
+      <Column Name="year" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="numfiches" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ageparanne" Member="ageparanne">
+    <Type Name="ageparanne">
+      <Column Name="age" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="year" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vicparage" Member="vicparage">
+    <Type Name="vicparage">
+      <Column Name="age" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nbvic" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vicparanne" Member="vicparanne">
+    <Type Name="vicparanne">
+      <Column Name="age" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nbvic" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Appeltable" Member="Appeltable">
+    <Type Name="Appeltable">
+      <Column Name="CleAppel" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Medecinregulateur" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="NBvictimes" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Param" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Objetdedemande" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Decisionderegulation" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Vehiculeengage" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Motifdappel" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Typologiepathologie" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="pathologie" Type="System.String" DbType="VarChar(31)" CanBeNull="true" />
+      <Column Name="Validationmission" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Utilitedemission" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Idappelant" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="arriveappel" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="destinationdesire" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="date" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Appeltable_Appel_Utilisateur_table" Member="Appel_Utilisateur_table" ThisKey="CleAppel" OtherKey="clefiche" Type="Appel_Utilisateur_table" />
+      <Association Name="Appeltable_AppelPatientTable" Member="AppelPatientTable" ThisKey="CleAppel" OtherKey="cleappel" Type="AppelPatientTable" />
+      <Association Name="Appeltable_Horraire_de_la_mission" Member="Horraire_de_la_mission" ThisKey="CleAppel" OtherKey="cleappel" Type="Horraire_de_la_mission" />
+      <Association Name="Appeltable_Appelant_table" Member="Appelant_table" ThisKey="CleAppel" OtherKey="cleappel" Type="Appelant_table" />
+      <Association Name="Appelant_table_Appeltable" Member="Appelant_table1" ThisKey="Idappelant" OtherKey="ID_appelant" Type="Appelant_table" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ficheparmotifcreate" Member="ficheparmotifcreate">
+    <Type Name="ficheparmotifcreate">
+      <Column Name="cle" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="motif" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.fichesparappel" Member="fichesparappel">
+    <Type Name="fichesparappel">
+      <Column Name="cle" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="arriveappel" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.fichesparmedreg" Member="fichesparmedreg">
+    <Type Name="fichesparmedreg">
+      <Column Name="cle" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="medreg" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.fichesparparam" Member="fichesparparam">
+    <Type Name="fichesparparam">
+      <Column Name="cle" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="param" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.registertbl" Member="registertbl">
+    <Type Name="registertbl">
+      <Column Name="nom" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="prenom" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="telephone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="identifiant" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="motdepasse" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="role" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="pk1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="service" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

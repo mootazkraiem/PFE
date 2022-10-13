@@ -1,0 +1,1231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Costura.Fody.3.3.3\build\Costura.Fody.props" Condition="Exists('..\packages\Costura.Fody.3.3.3\build\Costura.Fody.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EBCFB636-B8C8-490A-9607-F5E43929301E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PFE</RootNamespace>
+    <AssemblyName>PFE</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AdvancedDataGridView, Version=1.2.26803.6, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DG.AdvancedDataGridView.1.2.26803.6\lib\net40\AdvancedDataGridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.Licensing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=f89b4760ba7dcb6b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.Licensing.5.0.0\lib\net40\Bunifu.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms, Version=0.0.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.6.0.0-Beta\lib\net40\Bunifu.UI.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.1.5.3, Version=1.5.3.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.1.5.3.1.0.0\lib\net40\Bunifu.UI.WinForms.1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.Utils, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.Utils.1.0.6\lib\net\Bunifu.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="Costura, Version=3.3.3.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
+      <HintPath>..\packages\Costura.Fody.3.3.3\lib\net40\Costura.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.WinForms, Version=0.9.7.1, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.WinForms.0.9.7.1\lib\net45\LiveCharts.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Registry, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Win32.Registry.5.0.0\lib\net461\Microsoft.Win32.Registry.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Registry.AccessControl, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Win32.Registry.AccessControl.6.0.0\lib\net461\Microsoft.Win32.Registry.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.SystemEvents, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Win32.SystemEvents.6.0.0\lib\net461\Microsoft.Win32.SystemEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="RestSharp, Version=100.0.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharpSigned.105.2.3\lib\net46\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.CodeDom, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.CodeDom.6.0.0\lib\net461\System.CodeDom.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.6.0.0\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data.Odbc, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.Odbc.6.0.0\lib\net461\System.Data.Odbc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.OleDb, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.OleDb.6.0.0\lib\net461\System.Data.OleDb.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Data.SqlClient, Version=4.6.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SqlClient.4.8.3\lib\net461\System.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Diagnostics.EventLog, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.EventLog.6.0.0\lib\net461\System.Diagnostics.EventLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.PerformanceCounter, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.PerformanceCounter.6.0.0\lib\net461\System.Diagnostics.PerformanceCounter.dll</HintPath>
+    </Reference>
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.DirectoryServices.Protocols" />
+    <Reference Include="System.Drawing.Common, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Drawing.Common.6.0.0\lib\net461\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.AccessControl, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.AccessControl.5.0.0\lib\net461\System.IO.FileSystem.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Packaging, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Packaging.6.0.0\lib\net461\System.IO.Packaging.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Pipes.AccessControl, Version=4.0.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Pipes.AccessControl.5.0.0\lib\net461\System.IO.Pipes.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Ports, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Ports.6.0.0\lib\net461\System.IO.Ports.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection.Context" />
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.AccessControl, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.6.0.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.1\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Cng, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Cng.5.0.0\lib\net47\System.Security.Cryptography.Cng.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Pkcs, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Pkcs.6.0.0\lib\net461\System.Security.Cryptography.Pkcs.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.ProtectedData, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.ProtectedData.6.0.0\lib\net461\System.Security.Cryptography.ProtectedData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Xml, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Xml.6.0.0\lib\net461\System.Security.Cryptography.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Permissions, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Permissions.6.0.0\lib\net461\System.Security.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Duplex, Version=4.9.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ServiceModel.Duplex.4.9.0\lib\net461\System.ServiceModel.Duplex.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel.Http, Version=4.9.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ServiceModel.Http.4.9.0\lib\net461\System.ServiceModel.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel.NetTcp, Version=4.9.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ServiceModel.NetTcp.4.9.0\lib\net461\System.ServiceModel.NetTcp.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel.Primitives, Version=4.9.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ServiceModel.Primitives.4.9.0\lib\net461\System.ServiceModel.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel.Security, Version=4.9.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ServiceModel.Security.4.9.0\lib\net461\System.ServiceModel.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel.Syndication, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ServiceModel.Syndication.6.0.0\lib\net461\System.ServiceModel.Syndication.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.ServiceProcess.ServiceController, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ServiceProcess.ServiceController.6.0.0\lib\net461\System.ServiceProcess.ServiceController.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Speech" />
+    <Reference Include="System.Text.Encoding.CodePages, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encoding.CodePages.6.0.0\lib\net461\System.Text.Encoding.CodePages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.AccessControl, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.AccessControl.6.0.0\lib\net461\System.Threading.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Web.Services.Description, Version=4.9.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Web.Services.Description.4.9.0\lib\net461\System.Web.Services.Description.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="acc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="acc.Designer.cs">
+      <DependentUpon>acc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="espace admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="espace admin.Designer.cs">
+      <DependentUpon>espace admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fiches par arrive dappel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fiches par arrive dappel.Designer.cs">
+      <DependentUpon>fiches par arrive dappel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fiches par medreg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fiches par medreg.Designer.cs">
+      <DependentUpon>fiches par medreg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fichespar pamanencier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fichespar pamanencier.Designer.cs">
+      <DependentUpon>fichespar pamanencier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form3.Designer.cs">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="graphs\fiches par appelant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="graphs\fiches par appelant.Designer.cs">
+      <DependentUpon>fiches par appelant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="graphs\Ageparanne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="graphs\Ageparanne.Designer.cs">
+      <DependentUpon>Ageparanne.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ajout une fiche\Bilandequipe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ajout une fiche\Bilandequipe.Designer.cs">
+      <DependentUpon>Bilandequipe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ajout une fiche\Decisionderegulation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ajout une fiche\Decisionderegulation.Designer.cs">
+      <DependentUpon>Decisionderegulation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ajout une fiche\Destinationpatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ajout une fiche\Destinationpatient.Designer.cs">
+      <DependentUpon>Destinationpatient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ajout une fiche\detailsdefiche.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ajout une fiche\detailsdefiche.Designer.cs">
+      <DependentUpon>detailsdefiche.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ajout une fiche\fichemedical.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ajout une fiche\fichemedical.Designer.cs">
+      <DependentUpon>fichemedical.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ajout une fiche\HorrairedelaMission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ajout une fiche\HorrairedelaMission.Designer.cs">
+      <DependentUpon>HorrairedelaMission.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ajout une fiche\informationdepatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ajout une fiche\informationdepatient.Designer.cs">
+      <DependentUpon>informationdepatient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ajout une fiche\lieudepatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ajout une fiche\lieudepatient.Designer.cs">
+      <DependentUpon>lieudepatient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="graphs\appelparanne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="graphs\appelparanne.Designer.cs">
+      <DependentUpon>appelparanne.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Autrelieudepatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Autrelieudepatient.Designer.cs">
+      <DependentUpon>Autrelieudepatient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="charts.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>charts.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="SAMUDataSet19.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SAMUDataSet19.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SAMUDataSet20.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SAMUDataSet20.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SAMUDataSet21.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SAMUDataSet21.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Statistiques\AppelsSortie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Statistiques\AppelsSortie.Designer.cs">
+      <DependentUpon>AppelsSortie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Statistiques\Decision.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Statistiques\Decision.Designer.cs">
+      <DependentUpon>Decision.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Statistiques\intervention.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Statistiques\intervention.Designer.cs">
+      <DependentUpon>intervention.cs</DependentUpon>
+    </Compile>
+    <Compile Include="modifXsupp\appelantmodifsupp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modifXsupp\appelantmodifsupp.Designer.cs">
+      <DependentUpon>appelantmodifsupp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="modifXsupp\appelmodifsupp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modifXsupp\appelmodifsupp.Designer.cs">
+      <DependentUpon>appelmodifsupp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="chercher\appelantrecherche.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="chercher\appelantrecherche.Designer.cs">
+      <DependentUpon>appelantrecherche.cs</DependentUpon>
+    </Compile>
+    <Compile Include="chercher\appelchercher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="chercher\appelchercher.Designer.cs">
+      <DependentUpon>appelchercher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="chercher\chercher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="chercher\chercher.Designer.cs">
+      <DependentUpon>chercher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="chercher\horrairedemissionchercher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="chercher\horrairedemissionchercher.Designer.cs">
+      <DependentUpon>horrairedemissionchercher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="chercher\Lieudepatientchercher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="chercher\Lieudepatientchercher.Designer.cs">
+      <DependentUpon>Lieudepatientchercher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="modifXsupp\Horrairemissmodifsupp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modifXsupp\Horrairemissmodifsupp.Designer.cs">
+      <DependentUpon>Horrairemissmodifsupp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="modifXsupp\lieupatmodifsupp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modifXsupp\lieupatmodifsupp.Designer.cs">
+      <DependentUpon>lieupatmodifsupp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="login.Designer.cs">
+      <DependentUpon>login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ajout une fiche\motifdappel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ajout une fiche\motifdappel.Designer.cs">
+      <DependentUpon>motifdappel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="modifXsupp\modifsupprision.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modifXsupp\modifsupprision.Designer.cs">
+      <DependentUpon>modifsupprision.cs</DependentUpon>
+    </Compile>
+    <Compile Include="modifXsupp\patirntsuppmodif.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modifXsupp\patirntsuppmodif.Designer.cs">
+      <DependentUpon>patirntsuppmodif.cs</DependentUpon>
+    </Compile>
+    <Compile Include="chercher\patientchercher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="chercher\patientchercher.Designer.cs">
+      <DependentUpon>patientchercher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Statistiques\orientationdepatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Statistiques\orientationdepatient.Designer.cs">
+      <DependentUpon>orientationdepatient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Statistiques\Provenance_des_appels.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Statistiques\Provenance_des_appels.Designer.cs">
+      <DependentUpon>Provenance_des_appels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="register.Designer.cs">
+      <DependentUpon>register.cs</DependentUpon>
+    </Compile>
+    <Compile Include="registerclass.cs">
+      <DependentUpon>registerclass.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="registerclass.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>registerclass.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Ajout une fiche\typologieetcodage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ajout une fiche\typologieetcodage.Designer.cs">
+      <DependentUpon>typologieetcodage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ajout une fiche\validationfinal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ajout une fiche\validationfinal.Designer.cs">
+      <DependentUpon>validationfinal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Statistiques\Resourceshum.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Statistiques\Resourceshum.Designer.cs">
+      <DependentUpon>Resourceshum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SAMUDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SAMUDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SAMUDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SAMUDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SAMUDataSet10.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SAMUDataSet10.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SAMUDataSet11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SAMUDataSet11.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SAMUDataSet12.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SAMUDataSet12.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SAMUDataSet13.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SAMUDataSet13.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SAMUDataSet141.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SAMUDataSet141.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SAMUDataSet15.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SAMUDataSet15.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SAMUDataSet16.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SAMUDataSet16.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SAMUDataSet17.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SAMUDataSet17.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SAMUDataSet18.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SAMUDataSet18.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SAMUDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SAMUDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SAMUDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SAMUDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SAMUDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SAMUDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SAMUDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SAMUDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SAMUDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SAMUDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SAMUDataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SAMUDataSet7.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SAMUDataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SAMUDataSet8.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SAMUDataSet9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SAMUDataSet9.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Statistiques\SMURSRATTACHEs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Statistiques\SMURSRATTACHEs.Designer.cs">
+      <DependentUpon>SMURSRATTACHEs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Statistiques\statistiques.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Statistiques\statistiques.Designer.cs">
+      <DependentUpon>statistiques.cs</DependentUpon>
+    </Compile>
+    <Compile Include="graphs\stats.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="graphs\stats.Designer.cs">
+      <DependentUpon>stats.cs</DependentUpon>
+    </Compile>
+    <Compile Include="graphs\victimesparage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="graphs\victimesparage.Designer.cs">
+      <DependentUpon>victimesparage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="graphs\victimesparanne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="graphs\victimesparanne.Designer.cs">
+      <DependentUpon>victimesparanne.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Urgence acceuil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Urgence acceuil.Designer.cs">
+      <DependentUpon>Urgence acceuil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User config.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User config.Designer.cs">
+      <DependentUpon>User config.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="acc.resx">
+      <DependentUpon>acc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="espace admin.resx">
+      <DependentUpon>espace admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fiches par arrive dappel.resx">
+      <DependentUpon>fiches par arrive dappel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fiches par medreg.resx">
+      <DependentUpon>fiches par medreg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fichespar pamanencier.resx">
+      <DependentUpon>fichespar pamanencier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form3.resx">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="graphs\fiches par appelant.resx">
+      <DependentUpon>fiches par appelant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="graphs\Ageparanne.resx">
+      <DependentUpon>Ageparanne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ajout une fiche\Bilandequipe.resx">
+      <DependentUpon>Bilandequipe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ajout une fiche\Decisionderegulation.resx">
+      <DependentUpon>Decisionderegulation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ajout une fiche\Destinationpatient.resx">
+      <DependentUpon>Destinationpatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ajout une fiche\detailsdefiche.resx">
+      <DependentUpon>detailsdefiche.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ajout une fiche\fichemedical.resx">
+      <DependentUpon>fichemedical.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ajout une fiche\HorrairedelaMission.resx">
+      <DependentUpon>HorrairedelaMission.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ajout une fiche\informationdepatient.resx">
+      <DependentUpon>informationdepatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ajout une fiche\lieudepatient.resx">
+      <DependentUpon>lieudepatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="graphs\appelparanne.resx">
+      <DependentUpon>appelparanne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Autrelieudepatient.resx">
+      <DependentUpon>Autrelieudepatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statistiques\AppelsSortie.resx">
+      <DependentUpon>AppelsSortie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statistiques\Decision.resx">
+      <DependentUpon>Decision.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statistiques\intervention.resx">
+      <DependentUpon>intervention.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modifXsupp\appelantmodifsupp.resx">
+      <DependentUpon>appelantmodifsupp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modifXsupp\appelmodifsupp.resx">
+      <DependentUpon>appelmodifsupp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="chercher\appelantrecherche.resx">
+      <DependentUpon>appelantrecherche.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="chercher\appelchercher.resx">
+      <DependentUpon>appelchercher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="chercher\chercher.resx">
+      <DependentUpon>chercher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="chercher\horrairedemissionchercher.resx">
+      <DependentUpon>horrairedemissionchercher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="chercher\Lieudepatientchercher.resx">
+      <DependentUpon>Lieudepatientchercher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modifXsupp\Horrairemissmodifsupp.resx">
+      <DependentUpon>Horrairemissmodifsupp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modifXsupp\lieupatmodifsupp.resx">
+      <DependentUpon>lieupatmodifsupp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="login.resx">
+      <DependentUpon>login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ajout une fiche\motifdappel.resx">
+      <DependentUpon>motifdappel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modifXsupp\modifsupprision.resx">
+      <DependentUpon>modifsupprision.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modifXsupp\patirntsuppmodif.resx">
+      <DependentUpon>patirntsuppmodif.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="chercher\patientchercher.resx">
+      <DependentUpon>patientchercher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statistiques\orientationdepatient.resx">
+      <DependentUpon>orientationdepatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Statistiques\Provenance_des_appels.resx">
+      <DependentUpon>Provenance_des_appels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="register.resx">
+      <DependentUpon>register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ajout une fiche\typologieetcodage.resx">
+      <DependentUpon>typologieetcodage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ajout une fiche\validationfinal.resx">
+      <DependentUpon>validationfinal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statistiques\Resourceshum.resx">
+      <DependentUpon>Resourceshum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statistiques\SMURSRATTACHEs.resx">
+      <DependentUpon>SMURSRATTACHEs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statistiques\statistiques.resx">
+      <DependentUpon>statistiques.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="graphs\stats.resx">
+      <DependentUpon>stats.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="graphs\victimesparage.resx">
+      <DependentUpon>victimesparage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="graphs\victimesparanne.resx">
+      <DependentUpon>victimesparanne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Urgence acceuil.resx">
+      <DependentUpon>Urgence acceuil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User config.resx">
+      <DependentUpon>User config.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="charts.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>charts.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="charts.dbml.layout">
+      <DependentUpon>charts.dbml</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="registerclass.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>registerclass.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="registerclass.dbml.layout">
+      <DependentUpon>registerclass.dbml</DependentUpon>
+    </None>
+    <None Include="SAMUDataSet.xsc">
+      <DependentUpon>SAMUDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SAMUDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SAMUDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SAMUDataSet.xss">
+      <DependentUpon>SAMUDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SAMUDataSet1.xsc">
+      <DependentUpon>SAMUDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="SAMUDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SAMUDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SAMUDataSet1.xss">
+      <DependentUpon>SAMUDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="SAMUDataSet10.xsc">
+      <DependentUpon>SAMUDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="SAMUDataSet10.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SAMUDataSet10.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SAMUDataSet10.xss">
+      <DependentUpon>SAMUDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="SAMUDataSet11.xsc">
+      <DependentUpon>SAMUDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="SAMUDataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SAMUDataSet11.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SAMUDataSet11.xss">
+      <DependentUpon>SAMUDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="SAMUDataSet12.xsc">
+      <DependentUpon>SAMUDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="SAMUDataSet12.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SAMUDataSet12.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SAMUDataSet12.xss">
+      <DependentUpon>SAMUDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="SAMUDataSet13.xsc">
+      <DependentUpon>SAMUDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="SAMUDataSet13.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SAMUDataSet13.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SAMUDataSet13.xss">
+      <DependentUpon>SAMUDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="SAMUDataSet141.xsc">
+      <DependentUpon>SAMUDataSet141.xsd</DependentUpon>
+    </None>
+    <None Include="SAMUDataSet141.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SAMUDataSet141.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SAMUDataSet141.xss">
+      <DependentUpon>SAMUDataSet141.xsd</DependentUpon>
+    </None>
+    <None Include="SAMUDataSet15.xsc">
+      <DependentUpon>SAMUDataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="SAMUDataSet15.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SAMUDataSet15.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SAMUDataSet15.xss">
+      <DependentUpon>SAMUDataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="SAMUDataSet16.xsc">
+      <DependentUpon>SAMUDataSet16.xsd</DependentUpon>
+    </None>
+    <None Include="SAMUDataSet16.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SAMUDataSet16.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SAMUDataSet16.xss">
+      <DependentUpon>SAMUDataSet16.xsd</DependentUpon>
+    </None>
+    <None Include="SAMUDataSet17.xsc">
+      <DependentUpon>SAMUDataSet17.xsd</DependentUpon>
+    </None>
+    <None Include="SAMUDataSet17.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SAMUDataSet17.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SAMUDataSet17.xss">
+      <DependentUpon>SAMUDataSet17.xsd</DependentUpon>
+    </None>
+    <None Include="SAMUDataSet18.xsc">
+      <DependentUpon>SAMUDataSet18.xsd</DependentUpon>
+    </None>
+    <None Include="SAMUDataSet18.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SAMUDataSet18.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SAMUDataSet18.xss">
+      <DependentUpon>SAMUDataSet18.xsd</DependentUpon>
+    </None>
+    <None Include="SAMUDataSet19.xsc">
+      <DependentUpon>SAMUDataSet19.xsd</DependentUpon>
+    </None>
+    <None Include="SAMUDataSet19.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SAMUDataSet19.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SAMUDataSet19.xss">
+      <DependentUpon>SAMUDataSet19.xsd</DependentUpon>
+    </None>
+    <None Include="SAMUDataSet2.xsc">
+      <DependentUpon>SAMUDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="SAMUDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SAMUDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SAMUDataSet2.xss">
+      <DependentUpon>SAMUDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="SAMUDataSet20.xsc">
+      <DependentUpon>SAMUDataSet20.xsd</DependentUpon>
+    </None>
+    <None Include="SAMUDataSet20.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SAMUDataSet20.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SAMUDataSet20.xss">
+      <DependentUpon>SAMUDataSet20.xsd</DependentUpon>
+    </None>
+    <None Include="SAMUDataSet21.xsc">
+      <DependentUpon>SAMUDataSet21.xsd</DependentUpon>
+    </None>
+    <None Include="SAMUDataSet21.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SAMUDataSet21.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SAMUDataSet21.xss">
+      <DependentUpon>SAMUDataSet21.xsd</DependentUpon>
+    </None>
+    <None Include="SAMUDataSet3.xsc">
+      <DependentUpon>SAMUDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="SAMUDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SAMUDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SAMUDataSet3.xss">
+      <DependentUpon>SAMUDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="SAMUDataSet4.xsc">
+      <DependentUpon>SAMUDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="SAMUDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SAMUDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SAMUDataSet4.xss">
+      <DependentUpon>SAMUDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="SAMUDataSet5.xsc">
+      <DependentUpon>SAMUDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="SAMUDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SAMUDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SAMUDataSet5.xss">
+      <DependentUpon>SAMUDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="SAMUDataSet6.xsc">
+      <DependentUpon>SAMUDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="SAMUDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SAMUDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SAMUDataSet6.xss">
+      <DependentUpon>SAMUDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="SAMUDataSet7.xsc">
+      <DependentUpon>SAMUDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="SAMUDataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SAMUDataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SAMUDataSet7.xss">
+      <DependentUpon>SAMUDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="SAMUDataSet8.xsc">
+      <DependentUpon>SAMUDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="SAMUDataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SAMUDataSet8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SAMUDataSet8.xss">
+      <DependentUpon>SAMUDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="SAMUDataSet9.xsc">
+      <DependentUpon>SAMUDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="SAMUDataSet9.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SAMUDataSet9.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SAMUDataSet9.xss">
+      <DependentUpon>SAMUDataSet9.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\samu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\samu1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 et x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Recherche_silhouette_blue.svg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2786450.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\foldertemplates_103601.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folderpublicshare_103593.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\retour.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png-clipart-custom-home-house-home-care-service-real-estate-home-blue-angle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png-clipart-custom-home-house-home-care-service-real-estate-home-blue-angle1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\acc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\téléchargement.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7445.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\resourceshumaines.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smurs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ambulance.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\appsortie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\provenance.jfif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\decision.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\analytique %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\analytique.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\presentation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\taux.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Datasets\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circular-chart-2942157-2428291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\seo-report-2942143-2428277.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pie-graph-2942148-2428282.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\analytics-2969357-2471778.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\administratif.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ajouter-un-utilisateur.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\homme-daffaire %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\supprimer-un-ami.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Fody.4.0.2\build\Fody.targets" Condition="Exists('..\packages\Fody.4.0.2\build\Fody.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Ce projet fait référence à des packages NuGet qui sont manquants sur cet ordinateur. Utilisez l'option de restauration des packages NuGet pour les télécharger. Pour plus d'informations, consultez http://go.microsoft.com/fwlink/?LinkID=322105. Le fichier manquant est : {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Fody.4.0.2\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.4.0.2\build\Fody.targets'))" />
+    <Error Condition="!Exists('..\packages\Costura.Fody.3.3.3\build\Costura.Fody.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Costura.Fody.3.3.3\build\Costura.Fody.props'))" />
+  </Target>
+</Project>

@@ -1,0 +1,3 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SAMU" Class="chartsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-R87NU04\DESK1;Initial Catalog=SAMU;Integrated Security=True" SettingsObjectName="PFE.Properties.Settings" SettingsPropertyName="SAMUConnectionString" Provider="System.Data.SqlClient" />
+</Database>
